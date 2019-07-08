@@ -22,7 +22,7 @@ public class Product implements Serializable {
     //收益率
     private BigDecimal rewardRate;
     /**
-     * @see com.bawei.entity.enums.ProductStatus
+     * @see com.zq.entity.enums.ProductStatus
      */
     private String status;
     private String memo;
