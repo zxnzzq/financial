@@ -1,6 +1,7 @@
 package com.zq.manager.service;
 
 import com.zq.entity.Product;
+import com.zq.entity.enums.ErrorEnum;
 import com.zq.entity.enums.ProductStatus;
 import com.zq.manager.repositories.ProductRepository;
 import org.slf4j.Logger;
@@ -75,13 +76,13 @@ public class ProductService {
      * @param product
      */
     private void checkProduct(Product product) {
-//        Assert.notNull(product.getId(), ErrorEnum.ID_NOT_NULL.getCode());
-        Assert.notNull(product.getName(), "名称不可为空");
-        Assert.notNull(product.getThresholdAmount(), "起投金额不可为空");
-        Assert.notNull(product.getStepAmount(), "投资步长不可为空");
-        Assert.notNull(product.getLockTerm(), "锁定期不可为空");
-        Assert.notNull(product.getRewardRate(), "收益率不可为空");
-        Assert.notNull(product.getStatus(), "状态不可为空");
+        Assert.notNull(product.getId(), ErrorEnum.ID_NOT_NULL.getMessage());
+        Assert.notNull(product.getName(), ErrorEnum.NAME_NOT_NULL.getMessage());
+        Assert.notNull(product.getThresholdAmount(), ErrorEnum.THRESHOLD_AMOUNT_NOT_NULL.getMessage());
+        Assert.notNull(product.getStepAmount(), ErrorEnum.STEP_AMOUNT_NOT_NULL.getMessage());
+        Assert.notNull(product.getLockTerm(), ErrorEnum.LOCK_TERM_NOT_NULL.getMessage());
+        Assert.notNull(product.getRewardRate(), ErrorEnum.REWARD_RATE_NOT_NULL.getMessage());
+        Assert.notNull(product.getStatus(), ErrorEnum.STATUS_NOT_NULL.getMessage());
         Assert.isTrue(BigDecimal.ZERO.compareTo(product.getRewardRate()) < 0
                 && BigDecimal.valueOf(30).compareTo(product.getRewardRate()) >= 0, "收益率范围错误");
         Assert.isTrue(BigDecimal.valueOf(product.getStepAmount().longValue()).compareTo(product.getStepAmount()) == 0,
