@@ -1,6 +1,7 @@
 package com.zq.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,8 +27,10 @@ public class Product implements Serializable {
      */
     private String status;
     private String memo;
+    @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss")
     private Date createAt;
     private String createUser;
+    @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss")
     private Date updateAt;
     private String updateUser;
 

@@ -2,10 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="com.zq.api.main" target="1.8" />
+      <module name="com.zq.api.test" target="1.8" />
       <module name="com.zq.financial.main" target="1.8" />
       <module name="com.zq.financial.test" target="1.8" />
       <module name="com.zq.manager.main" target="1.8" />
       <module name="com.zq.manager.test" target="1.8" />
+      <module name="financial.entity.main" target="1.8" />
+      <module name="financial.entity.test" target="1.8" />
+      <module name="financial.seller.main" target="1.8" />
+      <module name="financial.seller.test" target="1.8" />
+      <module name="financial.swagger.main" target="1.8" />
+      <module name="financial.swagger.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

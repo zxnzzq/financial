@@ -15,11 +15,11 @@ public class Order implements Serializable {
     private String productId;
     private String chanUserId;
     /**
-     * @see com.bawei.entity.enums.OrderType
+     * @see com.zq.entity.enums.OrderType
      */
     private String orderType;
     /**
-     * @see com.bawei.entity.enums.OrderStatus
+     * @see com.zq.entity.enums.OrderStatus
      */
     private String orderStatus;
     private String outerOrderId;
