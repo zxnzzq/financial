@@ -2,4 +2,5 @@ dependencies {
     compile project(":api")
     compile project(":swagger")
     compile libs.mysql
+    compile libs.activemq
 }

@@ -5,3 +5,7 @@ server:
 rpc:
   manager:
     url: http://localhost:8081/manager/
+
+spring:
+  cache:
+    type: hazelcast
