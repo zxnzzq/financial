@@ -2,6 +2,7 @@ package com.zq.manager.controller;
 
 import com.zq.entity.Product;
 import com.zq.manager.service.ProductService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @ApiOperation(value = "创建产品",notes = "根据对应业务规则添加响应的产品")
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Product addProduct(@RequestBody Product product){
         LOG.info("创建产品，参数：{}", product);

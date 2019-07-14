@@ -2,7 +2,9 @@ package com.zq.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -25,6 +27,7 @@ public class Product implements Serializable {
     /**
      * @see com.zq.entity.enums.ProductStatus
      */
+    @ApiModelProperty(value = "状态",dataType = "com.bawei.entity.enums.ProductStatus")
     private String status;
     private String memo;
     @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss")

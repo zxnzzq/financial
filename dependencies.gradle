@@ -13,7 +13,7 @@ ext{
             ],
             /*rpc框架*/
             jsonrpc: [
-                    "com.github.briandilley.jsonrpc4j:jsonrpc4j:1.5.0"
+                    "com.zq.jsonrpc4j:1.5.3"
             ],
             /*文档管理工具*/
             swagger: [
