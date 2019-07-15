@@ -9,3 +9,14 @@ rpc:
 spring:
   cache:
     type: hazelcast
+  #  activemq的地址
+  activemq:
+    broker-url: tcp://localhost:61616
+    #    指定所有的包都信任，这样所有包下面的对象都可以作为事件对象
+    packages:
+      trust-all: true
+  #      数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/seller?user=root&password=123456
+  jpa:
+    show-sql: true

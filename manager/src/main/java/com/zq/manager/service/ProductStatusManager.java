@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductStatusManager {
     static Logger LOG = LoggerFactory.getLogger(ProductStatusManager.class);
-    static final String MQ_DESTINATION = "VirtualTopic.PRODUCT_STATUS";
+    public static final String MQ_DESTINATION = "VirtualTopic.PRODUCT_STATUS";
 
     @Autowired
     private JmsTemplate jmsTemplate;

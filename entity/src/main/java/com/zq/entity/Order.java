@@ -5,6 +5,7 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity(name = "order_t")
@@ -23,7 +24,7 @@ public class Order implements Serializable {
      */
     private String orderStatus;
     private String outerOrderId;
-    private String amount;
+    private BigDecimal amount;
     private String memo;
     @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss")
     private Date createAt;
@@ -91,11 +92,11 @@ public class Order implements Serializable {
         this.outerOrderId = outerOrderId;
     }
 
-    public String getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
