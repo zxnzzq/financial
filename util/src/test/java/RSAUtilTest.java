@@ -30,7 +30,7 @@ public class RSAUtilTest {
      */
     @Test
     public void signTets(){
-        String text = "bawei";
+        String text = "{\"amount\":11000.0,\"chanId\":\"10000\",\"chanUserId\":\"zq\",\"createAt\":\"2019-12-364 18:44:23\",\"memo\":\"\",\"outerOrderId\":\"1\",\"productId\":\"1\"}";
         String sign = RSAUtil.sign(text, privateKey);
         System.out.println(sign);
         System.out.println(RSAUtil.verify(text, sign, publicKey));

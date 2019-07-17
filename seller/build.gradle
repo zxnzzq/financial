@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     compile project(":manager")
+    compile project(":util")
     compile libs.hazelcast
     compile libs.activemq
     compile libs.mysql
