@@ -24,7 +24,7 @@ import java.util.Map;
 public class ProductCache {
     Logger LOG = LoggerFactory.getLogger(ProductCache.class);
 
-    static final String CACHE_NAME = "bawei_product";
+    static final String CACHE_NAME = "zq_product";
 
     @Autowired
     private ProductRpc productRpc;

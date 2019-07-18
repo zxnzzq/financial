@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
 
@@ -61,20 +60,20 @@ public class OrderService {
         Assert.notNull(product, "产品不存在");
         //金额要满足有起投金额时，要大于等于起投金额，如果有投资步长时，超过起投金额的部分要是投资步长的整数倍
         Assert.isTrue(order.getAmount().compareTo(product.getThresholdAmount()) > 0, "金额要大于等于起投金额");
-        BigDecimal amount = order.getAmount();
-        BigDecimal stepAmount = product.getStepAmount();
-        BigDecimal thresholdAmount = product.getThresholdAmount();
-        BigDecimal divide = amount.divide(thresholdAmount);
-        System.out.println(amount);
-        System.out.println(stepAmount);
-        System.out.println(thresholdAmount);
-        System.out.println(divide);
-        BigDecimal subtract = amount.subtract(thresholdAmount);
-        System.out.println(subtract);
-        BigDecimal[] bigDecimals = subtract.divideAndRemainder(stepAmount);
-        for (int i = 0; i < bigDecimals.length; i++) {
-            System.out.println(bigDecimals[i]);
-        }
+//        BigDecimal amount = order.getAmount();
+//        BigDecimal stepAmount = product.getStepAmount();
+//        BigDecimal thresholdAmount = product.getThresholdAmount();
+//        BigDecimal divide = amount.divide(thresholdAmount);
+//        System.out.println(amount);
+//        System.out.println(stepAmount);
+//        System.out.println(thresholdAmount);
+//        System.out.println(divide);
+//        BigDecimal subtract = amount.subtract(thresholdAmount);
+//        System.out.println(subtract);
+//        BigDecimal[] bigDecimals = subtract.divideAndRemainder(stepAmount);
+//        for (int i = 0; i < bigDecimals.length; i++) {
+//            System.out.println(bigDecimals[i]);
+//        }
         Assert.isTrue(order.getAmount().subtract(product.getThresholdAmount()).divideAndRemainder(product.getStepAmount())[1].intValue()==0,
                 "超过起投金额的部分要是投资步长的整数倍"  );
     }

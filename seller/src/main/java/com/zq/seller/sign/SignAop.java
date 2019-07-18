@@ -20,7 +20,7 @@ public class SignAop {
     @Autowired
     public SignService signService;
 
-    //限制为 任何返回值 com.bawei.seller.controller目录下的任何类的任何方法的任意参数并且参数限制为(authId,sign,text,以及任何参数)
+    //限制为 任何返回值 com.zq.seller.controller目录下的任何类的任何方法的任意参数并且参数限制为(authId,sign,text,以及任何参数)
     @Before(value = "execution(* com.zq.seller.controller.*.*(..)) && args(authId,sign,text,..)")
     public void verify(String authId, String sign, SignText text){
         LOG.info("拦截请求，authId:{},sign:{},text:{}", authId,sign,text.toText());

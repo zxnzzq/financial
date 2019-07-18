@@ -29,8 +29,8 @@ public class RSAUtilTest {
      * Kj5v+PVHyLNKu0LhrGJ56QJwlOJGrN64SkXSWc53F7+YKGIWg9RjC86+XZRpADTqxHiBu0xfLP5rxhCuNZdEvjLsunvwQNpsIsMkZ7i44Ze5Qu7bxggfWgcxwBhI7Q1HkPwGj8Gnc/i7VJRtvLVoK/PPKte68ChPVU2/j8peRN8=
      */
     @Test
-    public void signTets(){
-        String text = "{\"amount\":11000.0,\"chanId\":\"10000\",\"chanUserId\":\"zq\",\"createAt\":\"2019-12-364 18:44:23\",\"memo\":\"\",\"outerOrderId\":\"1\",\"productId\":\"1\"}";
+    public void signTest(){
+        String text = "gkd";
         String sign = RSAUtil.sign(text, privateKey);
         System.out.println(sign);
         System.out.println(RSAUtil.verify(text, sign, publicKey));

@@ -49,7 +49,7 @@ public class SwaggerConfiguration {
                 .title(swaggerInfo.getTitle())
                 .description(swaggerInfo.getDescription())
                 .termsOfServiceUrl("http://springfox.io")
-                .contact("bawei")
+                .contact("zq")
                 .license(swaggerInfo.getLicense())
                 .version("2.0")
                 .build();
