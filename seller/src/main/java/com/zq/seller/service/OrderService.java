@@ -6,9 +6,11 @@ import com.zq.entity.enums.OrderStatus;
 import com.zq.entity.enums.OrderType;
 import com.zq.seller.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import javax.annotation.PostConstruct;
 import java.util.Date;
 import java.util.UUID;
 
@@ -77,4 +79,18 @@ public class OrderService {
         Assert.isTrue(order.getAmount().subtract(product.getThresholdAmount()).divideAndRemainder(product.getStepAmount())[1].intValue()==0,
                 "超过起投金额的部分要是投资步长的整数倍"  );
     }
+
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    @Autowired
+    @Qualifier("readOrderRepository")
+    private OrderRepository readOrderRepository;
+    @PostConstruct
+    public void queryOrder() throws IllegalAccessException, InstantiationException {
+        Class c = readOrderRepository.getClass();
+        OrderRepository o = (OrderRepository) c.newInstance();
+        System.out.println("输出");
+        System.out.println(orderRepository.findAll());
+        System.out.println(readOrderRepository.findAll());
+    }
+
 }
